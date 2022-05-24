@@ -18,6 +18,7 @@ import {
   Info,
   Forecast,
   Section,
+  Note,
 } from './styled'
 
 export const Weather = () => {
@@ -48,9 +49,11 @@ export const Weather = () => {
   const showNote = (temperature) => {
     switch (temperature) {
       case temperature > 30:
-        return "🥵 It's too hot outside! "
+        return 'Stay hydrated and do not forget about protective clothes'
+      case temperature < 10:
+        return 'Do not forget to bring your jacket'
       default:
-        return null
+        return 'go outside'
     }
   }
 
@@ -73,7 +76,7 @@ export const Weather = () => {
           <StyledP>Humidity: {weather.main.humidity} % </StyledP>
           <StyledP>Wind speed: {Math.round(weather.wind.speed)} m/s</StyledP>
         </Forecast>
-        {showNote(weather.main.temp)}
+        <Note>{showNote(weather.main.temp)}</Note>
       </Section>
     </Container>
   )
