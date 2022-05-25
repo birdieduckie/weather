@@ -5,7 +5,10 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-self: center;
-  background: #e8dfe4;
+  width: 80%;
+  height: 80%;
+  background: #f7e1d3;
   color: #b68772;
   font-family: 'Lato', sans-serif;
+  border-radius: 4px;
 `

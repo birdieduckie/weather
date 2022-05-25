@@ -11,10 +11,17 @@ export const Container = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 15px;
+
   color: white;
-  font-weight: bold;
-  font-family: 'Lato', sans-serif;
+
+  > div:nth-child(1) {
+    border-bottom: 3px solid white;
+  }
+
+  > div:nth-child(2) {
+    justify-content: space-between;
+    height: 25%;
+  }
 
   ${(p) =>
     p.mainWeather === MAIN_WEATHER.CLOUDS &&
@@ -33,63 +40,74 @@ export const Container = styled.div`
     css`
       background: #0b61f1;
     `}
+
+    ${(p) =>
+    p.mainWeather === MAIN_WEATHER.HAZE &&
+    css`
+      background: #fecaca;
+    `}
 `
 
 export const StyledP = styled.p`
-  font-size: 22px;
+  margin: 20px 0 0 20px;
 `
 
 export const Section = styled.div`
   display: flex;
-  flex-direction: row;
+  height: 70%;
 `
 
 export const Description = styled.div`
   display: flex;
-  margin-top: auto;
-  margin-bottom: 10px;
+  margin: auto 0 20px 20px;
   font-size: 38px;
+  font-weight: 700;
 `
 
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 35%;
+  font-weight: 600;
+
+  font-size: 22px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 16px;
+  }
 `
 
 export const Forecast = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  width: 50%;
-  z-index: 2;
-`
+  width: 35%;
 
-export const Line = styled.hr`
-  display: flex;
-  align-items: center;
-  width: 95%;
-  height: 4px;
-  background: white;
-  margin-inline: 0;
-  border-width: 0;
-  border-radius: 2px;
-  z-index: 2;
+  font-size: 22px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 16px;
+  }
 `
 
 export const Note = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 50%;
+  margin: 20px 20px 0 0;
+  font-size: 28px;
+  font-weight: 600;
+  width: 65%;
+
+  @media screen and (max-width: 600px) {
+    width: 35%;
+  }
 `
 
 export const Main = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  width: 400px;
-  height: 400px;
-  z-index: 1;
+  width: 65%;
+  height: 90%;
 
   ${(p) =>
     p.mainWeather === MAIN_WEATHER.CLOUDS &&
@@ -107,5 +125,11 @@ export const Main = styled.div`
     p.mainWeather === MAIN_WEATHER.RAIN &&
     css`
       background: center / contain no-repeat url(${drops});
+    `}
+
+    ${(p) =>
+    p.mainWeather === MAIN_WEATHER.HAZE &&
+    css`
+      background: center / contain no-repeat url(${cloud});
     `}
 `

@@ -13,7 +13,6 @@ import {
   Container,
   Main,
   StyledP,
-  Line,
   Description,
   Info,
   Forecast,
@@ -47,13 +46,17 @@ export const Weather = () => {
   }
 
   const showNote = (temperature) => {
-    switch (temperature) {
+    switch (true) {
       case temperature > 30:
-        return 'Stay hydrated and do not forget about protective clothes'
+        return 'Stay hydrated and do not forget about protective clothes!'
       case temperature < 10:
-        return 'Do not forget to bring your jacket'
+        return 'Do not forget to bring your jacket!'
+      case temperature > 20:
+        return 'Nice day for a walk! '
+      case temperature > 10:
+        return 'Grab a sweater and go outside!'
       default:
-        return 'go outside'
+        return 'Leaving your house is not the best idea right now'
     }
   }
 
@@ -69,7 +72,6 @@ export const Weather = () => {
         </Info>
         <Main mainWeather={weather.weather[0].main ?? MAIN_WEATHER.CLEAR} />
       </Section>
-      <Line></Line>
       <Section>
         <Forecast>
           <StyledP>Temperature: {Math.round(weather.main.temp)} °C</StyledP>
