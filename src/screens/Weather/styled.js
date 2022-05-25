@@ -80,7 +80,7 @@ export const Info = styled.div`
 export const Forecast = styled.div`
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 50%;
 
   font-size: 22px;
 
@@ -92,12 +92,13 @@ export const Forecast = styled.div`
 export const Note = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin: 20px 20px 0 0;
-  font-size: 28px;
+  margin: 15px 20px 0 0;
+  font-size: 22px;
   font-weight: 600;
   width: 65%;
 
   @media screen and (max-width: 600px) {
+    font-size: 16px;
     width: 35%;
   }
 `

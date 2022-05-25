@@ -24,9 +24,12 @@ export const Weather = () => {
   const dispatch = useDispatch()
 
   const { id } = useParams()
+
   const [searchParams] = useSearchParams()
 
   const weather = useSelector((state) => getWeatherById(state, id))
+
+  console.log(weather)
 
   useEffect(() => {
     const geo = {
