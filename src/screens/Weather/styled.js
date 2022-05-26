@@ -105,7 +105,6 @@ export const Note = styled.div`
 
 export const Main = styled.div`
   display: flex;
-  justify-content: flex-start;
   align-items: flex-end;
   width: 65%;
   height: 90%;
@@ -126,6 +125,12 @@ export const Main = styled.div`
     p.mainWeather === MAIN_WEATHER.RAIN &&
     css`
       background: center / contain no-repeat url(${drops});
+      margin: 20px 0 0 0;
+
+      @media screen and (max-width: 600px);
+       {
+        margin: 0 20px 0 0;
+      }
     `}
 
     ${(p) =>

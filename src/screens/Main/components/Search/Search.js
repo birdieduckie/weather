@@ -15,7 +15,7 @@ import {
 
 import { getWeatherRequest } from '../../../../store/weather/weather.actions'
 
-import { Container } from './styled'
+import { Container, Heading } from './styled'
 
 export const Search = () => {
   const dispatch = useDispatch()
@@ -48,7 +48,10 @@ export const Search = () => {
 
   return (
     <Container>
-      <Input placeholder='Find city...' onChange={handleSetInputValue} />
+      <Heading>
+        <h1> Weather App</h1>
+        <Input placeholder='Find city...' onChange={handleSetInputValue} />
+      </Heading>
       {cities.map(({ name, geo }) => (
         <Button
           key={`${geo.lat} / ${geo.lng}`}
