@@ -15,7 +15,7 @@ import {
 
 import { getWeatherRequest } from '../../../../store/weather/weather.actions'
 
-import { Container, Heading } from './styled'
+import { Container, List } from './styled'
 
 export const Search = () => {
   const dispatch = useDispatch()
@@ -48,18 +48,18 @@ export const Search = () => {
 
   return (
     <Container>
-      <Heading>
-        <h1> Weather App</h1>
-        <Input placeholder='Find city...' onChange={handleSetInputValue} />
-      </Heading>
-      {cities.map(({ name, geo }) => (
-        <Button
-          key={`${geo.lat} / ${geo.lng}`}
-          onClick={() => getWeather(geo.lat, geo.lng)}
-        >
-          {name} - {geo.lat}/{geo.lng}
-        </Button>
-      ))}
+      <h1> Weather App</h1>
+      <Input placeholder='Find city...' onChange={handleSetInputValue} />
+      <List>
+        {cities.map(({ name, geo }) => (
+          <Button
+            key={`${geo.lat} / ${geo.lng}`}
+            onClick={() => getWeather(geo.lat, geo.lng)}
+          >
+            {name} - {geo.lat}/{geo.lng}
+          </Button>
+        ))}
+      </List>
     </Container>
   )
 }

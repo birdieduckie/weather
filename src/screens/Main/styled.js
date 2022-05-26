@@ -11,5 +11,5 @@ export const Container = styled.div`
   color: #b68772;
   font-family: 'Lato', sans-serif;
   border-radius: 4px;
-  overflow: scroll;
+ 
 `
